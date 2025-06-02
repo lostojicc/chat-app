@@ -52,11 +52,6 @@ const NavBar = () => {
                   </div>
                   
                 </div>
-                <div className='border-b border-gray-300 px-2 py-2 gap-2.5'>
-                  <Link to="/settings" className='btn btn-ghost w-full flex justify-start btn-sm text-gray-500'>
-                    <span className='hidden sm:inline'>Settings</span>
-                  </Link>
-                </div>
                 <div className='px-2 py-2 gap-2.5'>
                   <button className='btn btn-ghost w-full flex justify-start btn-sm text-gray-500'
                           onClick={signOut}>

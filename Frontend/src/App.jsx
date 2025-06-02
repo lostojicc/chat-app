@@ -4,7 +4,6 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import HomePage from "./pages/HomePage"
 import SignUpPage from "./pages/SignUpPage"
 import SignInPage from "./pages/SignInPage"
-import SettingsPage from "./pages/SettingsPage"
 import ProfilePage from "./pages/ProfilePage"
 import { useAuthStore } from './store/useAuthStore'
 import { Loader } from "lucide-react"
@@ -35,7 +34,6 @@ const App = () => {
         <Route path='/' element={ authUser ? <HomePage/> : <Navigate to="/signin"/> }/>
         <Route path='/signup' element={ !authUser ? <SignUpPage/> : <Navigate to="/"/> }/>
         <Route path='/signin' element={ !authUser ? <SignInPage/> : <Navigate to="/"/> }/>
-        <Route path='/settings' element={<SettingsPage/>}/>
         <Route path='/profile' element={ authUser ? <ProfilePage/> : <Navigate to="/signin"/> }/>
       </Routes>
 
