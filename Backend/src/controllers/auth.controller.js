@@ -123,8 +123,8 @@ export const updateProfile = async (req, res) => {
 
 export const checkAuth = (req, res) => {
     try {
-        return res(200).json(req.user);
+        return res.status(200).json(req.user);
     } catch (error) {
-        return res(401);
+        return res.status(401);
     }
 }
