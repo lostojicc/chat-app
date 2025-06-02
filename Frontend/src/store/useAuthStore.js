@@ -55,5 +55,18 @@ export const useAuthStore = create((set) => ({
         } finally {
             set({ isSigningIn: false });
         }
+    },
+
+    updateProfile: async (data) => {
+        set({ isUpdatingProfile: true });
+        try {
+            const res = await axiosInstance.patch("auth/update-profile", data);
+            set({ authUser: res.data });
+            toast.success("Profile updated successfully!");
+        } catch (error) {
+            toast.error("Kita");
+        } finally {
+            set({ isUpdatingProfile: false });
+        }
     }
 }))

@@ -24,36 +24,36 @@ const NavBar = () => {
               <summary className="btn btn-ghost px-4 gap-3">
                 <div className="avatar">
                   <div className="w-9 rounded-full">
-                    <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+                    <img src={authUser.profilePic || "/avatar.png"} />
                   </div>
                 </div>
                 <span className='hidden sm:inline'>Hi, <span className='font-bold'>{ authUser.fullName }</span></span>
               </summary>
-              <div className="menu dropdown-content bg-base-100 rounded-box z-1 w-2xs shadow-lg right-0 mr-6">
-                <div className='flex items-center justify-start border-b border-gray-300 p-2 gap-2.5'>
+              <div className="menu dropdown-content bg-base-200 rounded-box z-1 w-2xs shadow-lg right-0 mr-6">
+                <div className='flex items-center justify-start border-b border-gray-300 p-3 gap-2.5'>
                   <div className="avatar">
-                    <div className="w-16 rounded">
+                    <div className="w-18 rounded">
                       <img
-                        src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
+                        src={authUser.profilePic || "/avatar.png"}
                         alt="Tailwind-CSS-Avatar-component"
                       />
                     </div>
                   </div>
                   <div className='flex flex-col'>
-                    <div className='text-gray-500'>
+                    <div>
                       { authUser.fullName }
                     </div>
-                    <div className='text-gray-400'>
+                    <div>
                       { authUser.email }
                     </div>
-                    <Link to="/profile" className='btn btn-primary m-0 btn-soft btn-xs'>
+                    <Link to="/profile" className='btn btn-primary mt-1.5 btn-xs'>
                       View profile
                     </Link>
                   </div>
                   
                 </div>
                 <div className='px-2 py-2 gap-2.5'>
-                  <button className='btn btn-ghost w-full flex justify-start btn-sm text-gray-500'
+                  <button className='btn btn-ghost w-full flex justify-start btn-sm'
                           onClick={signOut}>
                     Sign Out
                   </button>

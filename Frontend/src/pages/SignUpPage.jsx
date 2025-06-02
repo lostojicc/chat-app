@@ -95,7 +95,7 @@ const SignUpPage = () => {
               </div>
             </div>
             <button type='submit'
-                    className='btn btn-soft btn-primary w-full'
+                    className='btn btn-primary w-full'
                     disabled={isSigningUp}>
               { isSigningUp ? (
                 <>

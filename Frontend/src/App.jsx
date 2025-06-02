@@ -27,7 +27,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div data-theme="abyss">
       <NavBar/>
 
       <Routes>
