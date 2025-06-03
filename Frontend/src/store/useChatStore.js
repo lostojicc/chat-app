@@ -2,7 +2,7 @@ import { create } from "zustand";
 import toast from "react-hot-toast";
 import { axiosInstance } from "../lib/axios";
 
-export const useChatStore = create((set) => ({
+export const useChatStore = create((set, get) => ({
     messages: [],
     contacts: [],
     selectedContact: null,
@@ -30,6 +30,18 @@ export const useChatStore = create((set) => ({
             toast.error("Kita poruke");
         } finally {
             set({ isMessagesLoading: false });
+        }
+    },
+
+    sendMessage: async (data) => {
+        const { selectedContact, messages } = get();
+        try {
+            const res = await axiosInstance.post(`/message/send/${selectedContact._id}`, data);
+            console.log("cao")
+            set({ messages: [...messages, res.data] });
+
+        } catch (error) {
+            toast.error("Poslao si kitu");
         }
     },
 

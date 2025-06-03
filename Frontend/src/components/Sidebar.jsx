@@ -25,12 +25,12 @@ const Sidebar = () => {
 
                 
             </div>
-            <div className='overflow-y-auto w-full py-3'>
+            <div className='overflow-y-auto w-full'>
                     { contacts.map((user) => (
                         <button key={user._id}
                                 onClick={() => setSelectedContact(user)}
-                                className={`w-full p-3 flex items-center gap-3 hover:bg-base-300 transition-colors cursor-pointer
-                                            ${selectedContact?._id === user._id ? "bg-base-300 ring-1 ring-base-300" : ""}`}>
+                                className={`w-full p-3 flex items-center gap-3 hover:bg-neutral transition-colors cursor-pointer
+                                            ${selectedContact?._id === user._id ? "bg-neutral ring-1 ring-base-300" : ""}`}>
                             <div className='relative mx-auto lg:mx-0'>
                                 <img src={user.profilePic || "/avatar.png"}
                                     className='size-12 object-cover rounded-full'/>
