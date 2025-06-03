@@ -12,7 +12,7 @@ export const useChatStore = create((set) => ({
     getContacts: async () => {
         set({ isContactsLoading: true });
         try {
-            const res = axiosInstance.get("/messages/contacts");
+            const res = await axiosInstance.get("/message/contacts");
             set({ contacts: res.data });
         } catch (error) {
             toast.error("Kita kontakti");
@@ -24,12 +24,14 @@ export const useChatStore = create((set) => ({
     getMessages: async(userId) => {
         set({ isMessagesLoading: true });
         try {
-            const res = axiosInstance.get(`/messages/${userId}`);
+            const res = await axiosInstance.get(`/message/${userId}`);
             set({ messages: res.data });
         } catch (error) {
             toast.error("Kita poruke");
         } finally {
             set({ isMessagesLoading: false });
         }
-    }
+    },
+
+    setSelectedContact: (selectedContact) => set({ selectedContact }),
 }))

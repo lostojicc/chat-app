@@ -29,7 +29,7 @@ const NavBar = () => {
                 </div>
                 <span className='hidden sm:inline'>Hi, <span className='font-bold'>{ authUser.fullName }</span></span>
               </summary>
-              <div className="menu dropdown-content bg-base-200 rounded-box z-1 w-2xs shadow-lg right-0 mr-6">
+              <div className="menu dropdown-content bg-base-300 rounded-box z-1 w-2xs shadow-lg right-0 mr-6">
                 <div className='flex items-center justify-start border-b border-gray-300 p-3 gap-2.5'>
                   <div className="avatar">
                     <div className="w-18 rounded">
